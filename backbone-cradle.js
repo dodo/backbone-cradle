@@ -66,8 +66,8 @@ module.exports = function(cradle, database) {
               db.view(url, data, function(err, res) {
                 if (err) return error(err);
                 data = [];
-                res.forEach(function(row) {
-                  data.push(row);
+                res.rows.forEach(function(row) {
+                  data.push(row.doc);
                 });
                 success(data);
               });
